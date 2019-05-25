@@ -10,6 +10,7 @@ from .models import Category
 def categories (request, num=0):
 	if request.method == 'POST':
 		data = json.load(request)
+
 #		return HttpResponse("we got POST")
 #		return JsonResponse ({'method': 'POST', 'foo': 'bar'})
 #		return JsonResponse (data = data)
