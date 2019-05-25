@@ -1,3 +1,5 @@
 from django.db import models
 
-# Create your models here.
+class Category (models.Model):
+	num = models.IntegerField()
+	name = models.TextField()

@@ -1,3 +1,10 @@
 from django.shortcuts import render
 
-# Create your views here.
+from .models import Category
+
+def categories (request):
+	if request.method == 'POST':
+		return "we got POST"
+
+	else:
+		return "we got GET"
