@@ -40,6 +40,7 @@ class UniCounter:
     def restart (self):
     	self.num = 0
 
+
 numer = UniCounter ()
 
 
