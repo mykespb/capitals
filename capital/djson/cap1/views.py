@@ -53,9 +53,10 @@ def savedata (data, parentid=0):
 	""" store json data in database """
 
 	# check for existance of data in DB:
-	# temp = Category.objects.get(name=data['name'])
-	# if temp.exists():
-	# 	return
+	if Category.objects.count():
+		temp = Category.objects.filter(name=data['name'])
+		if temp.exists():
+			return
 
 	# write data to DB if OK: ...
 	mynum = numer.getnext
