@@ -10,8 +10,14 @@ from .models import Category
 def categories (request, num=0):
 	if request.method == 'POST':
 		data = json.load (request)
+
+		# if we allow only 1 load of data with POST
 		dropdata ()
 		numer.restart ()
+
+		# if we allow many loads of data with POST
+#		numer.rebase ()
+
 		savedata (data)
 
 #		return HttpResponse("we got POST")
@@ -27,19 +33,22 @@ def categories (request, num=0):
 
 
 class UniCounter:
-    """ class for unique counters """
+	""" class for unique counters """
 
-    def __init__ (self):
-        self.num = 0
+	def __init__ (self):
+		self.num = 0
 
-    @property
-    def getnext (self):
-        self.num += 1
-        return self.num
+	@property
+	def getnext (self):
+		self.num += 1
+		return self.num
 
-    def restart (self):
-    	self.num = 0
+	def restart (self):
+		self.num = 0
 
+	def rebase (self):
+		if Category.objects.count ():
+			self.num = Category.objects.last().id
 
 numer = UniCounter ()
 
