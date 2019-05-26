@@ -35,9 +35,9 @@ To use it once, comment out in cap1/views.py
 dropdata()
 numer.restart()
 
-To add data to DB, comment ouyt the variant with
+To add data to DB, comment out the variant with
 numer.rebase()
 
 The system sqlite3 database in root directory is used,
-it is not good generally.
+it is not good generally, but works well for single-time test task.
 
