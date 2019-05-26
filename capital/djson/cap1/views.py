@@ -11,6 +11,7 @@ def categories (request, num=0):
 	if request.method == 'POST':
 		data = json.load(request)
 		dropdata ()
+		numer.restart ()
 		savedata (data)
 
 #		return HttpResponse("we got POST")
@@ -36,6 +37,9 @@ class UniCounter:
         self.num += 1
         return self.num
 
+    def restart (self):
+    	self.num = 0
+
 numer = UniCounter ()
 
 
@@ -48,7 +52,10 @@ def dropdata ():
 def savedata (data, parentid=0):
 	""" store json data in database """
 
-	# check for existance of data in DB: ...
+	# check for existance of data in DB:
+	# temp = Category.objects.get(name=data['name'])
+	# if temp.exists():
+	# 	return
 
 	# write data to DB if OK: ...
 	mynum = numer.getnext
