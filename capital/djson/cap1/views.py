@@ -9,7 +9,7 @@ from .models import Category
 @csrf_exempt
 def categories (request, num=0):
 	if request.method == 'POST':
-		data = json.load(request)
+		data = json.load (request)
 		dropdata ()
 		numer.restart ()
 		savedata (data)
@@ -53,14 +53,12 @@ def savedata (data, parentid=0):
 	""" store json data in database """
 
 	# check for existance of data in DB:
-	if Category.objects.count():
-		temp = Category.objects.filter(name=data['name'])
-		if temp.exists():
-			return
+	if Category.objects.filter (name=data ['name']) .exists ():
+		return
 
 	# write data to DB if OK: ...
 	mynum = numer.getnext
-	record = Category (num=mynum, parent=parentid, name=data['name'])
+	record = Category (num=mynum, parent=parentid, name=data ['name'])
 	record.save()
 
 	if "children" in data:
