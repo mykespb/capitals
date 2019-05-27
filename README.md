@@ -6,7 +6,7 @@ Task
 
 Using Python 3.6+, Django 2+, JSON, ...
 
-Task from Admiral Markets - Python Test Assignmment
+Some Python Task - Python Test Assignmment
 
 Implementation
 ---------------------------
@@ -19,10 +19,10 @@ http://localhost:8000/categories...
 accordign to the task,
 
 or run 
-/examples/run-all-tests.sh
-and see results in corresponding *.out files,
+    /examples/run-all-tests.sh
+and see results in corresponding .out files,
 or run
-/examples/example1.sh
+    /examples/example1.sh
 etc
 to see results on the screen.
 
