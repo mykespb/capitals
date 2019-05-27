@@ -41,3 +41,7 @@ numer.rebase()
 The system sqlite3 database in root directory is used,
 it is not good generally, but works well for single-time test task.
 
+Python module json.tools is used to pretty-print output.
+
+Renumeration of records in DB from last() or max() is possible.
+

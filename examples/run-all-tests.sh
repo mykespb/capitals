@@ -1,3 +1,3 @@
-./example1.sh > example1.out
-./example2.sh > example2.out
-./example3.sh > example3.out
+./example1.sh   | python -m json.tool > example1.out
+./example2.sh   | python -m json.tool> example2.out
+./example3.sh   | python -m json.tool> example3.out
